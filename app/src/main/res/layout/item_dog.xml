@@ -8,11 +8,15 @@
         <variable
             name="dog"
             type="edu.ktu.doggyroomstarter.models.Dog" />
+        <variable
+            name="clickListener"
+            type="edu.ktu.doggyroomstarter.adapters.DogAdapter.DogClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(dog)}">
 
         <ImageView
             android:id="@+id/dog_image"
