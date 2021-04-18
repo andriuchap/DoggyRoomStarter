@@ -8,21 +8,21 @@ import kotlin.random.Random
 object MockData {
     val dogs = listOf(
         Dog(
-            1,
+            0,
             "Sparky",
             5,
             DogBreed.GERMAN_SHEPHERD,
             R.drawable.german_shepherd_192
         ),
         Dog(
-            2,
+            0,
             "Brian",
             7,
             DogBreed.LABRADOR_RETRIEVER,
             R.drawable.labrador_retriever_192
         ),
         Dog(
-            3,
+            0,
             "Walter",
             1,
             DogBreed.GOLDEN_RETRIEVER,
