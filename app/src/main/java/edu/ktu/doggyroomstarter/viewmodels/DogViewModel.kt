@@ -8,24 +8,13 @@ import kotlinx.coroutines.launch
 
 class DogViewModel(private val db: DogDatabase) : ViewModel() {
 
-    private val _dogs = MutableLiveData<List<Dog>>()
+    private val _dogs = db.dogDao().getAllDogs().asLiveData()
     val dogs: LiveData<List<Dog>>
         get() = _dogs
-
-    init {
-        getDogs()
-    }
 
     fun addDog() {
         viewModelScope.launch {
             db.dogDao().insertAll(MockData.getRandomDog())
-            getDogs()
-        }
-    }
-
-    private fun getDogs() {
-        viewModelScope.launch {
-            _dogs.postValue(db.dogDao().getAllDogs())
         }
     }
 
